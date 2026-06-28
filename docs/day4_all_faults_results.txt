@@ -1,0 +1,27 @@
+===============================================================================================
+  ORION SPACECRAFT  —  DAY 4  —  ALL FAULT SCENARIOS  —  LSTM DETECTION RESULTS
+===============================================================================================
+  Scenario                      Sensor                  Fault Start   Drift   1st Detection     Warning  Danger
+  -------------------------------------------------------------------------------------------
+  Battery Cell Collapse         battery_percentage             4000     120 min        min 4036      84 min  < 15 %
+  O2 Pressure Leak              oxygen_percentage              5000      90 min        min 5007      83 min  < 19.5 %
+  CO2 Scrubber Failure          co2_percentage                 6000     120 min        min 6010     110 min  > 1.0 %
+  Thermal Control Failure       cabin_temperature              7000      90 min        min 7008      82 min  > 85 °F
+  Power System Spike            cabin_temperature              8000     instant        min 8000       0 min  Instant failure
+===============================================================================================
+
+  SUMMARY
+  --------------------------------------------------
+  * Battery Cell Collapse         detected 84 min before failure  (min 4036)
+  * O2 Pressure Leak              detected 83 min before failure  (min 5007)
+  * CO2 Scrubber Failure          detected 110 min before failure  (min 6010)
+  * Thermal Control Failure       detected 82 min before failure  (min 7008)
+  * Power System Spike            detected 0 min AFTER fault  (min 8000)  [instant fault — no warning window]
+
+  Historical references:
+    Battery Cell Collapse         — Day 2 baseline fault
+    O2 Pressure Leak              — ISS Zvezda module microleak (2019-21)
+    CO2 Scrubber Failure          — Apollo 13 CO2 crisis (April 1970)
+    Thermal Control Failure       — Space Shuttle thermal control anomalies
+    Power System Spike            — Sudden electrical failure (no drift)
+===============================================================================================
